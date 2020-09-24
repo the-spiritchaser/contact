@@ -173,13 +173,14 @@
                                         type="text"
                                         name="name1"
                                         id="name1"
-                                        class="inqTYPE01 error"
+                                        class="inqTYPE01"
                                         maxlength="50"
                                         value=""
                                         placeholder="株式会社クラウドスミス"
                                         required
                                     />
-                                    <p class="errorTXT">会社名を入力してください</p>
+                                    <!-- <p class="errorTXT">会社名を入力してください</p> -->
+                                    <!-- <input class="inqTYPE01 error"> -->
                                 </dd>
                                 <dt>URL</dt>
                                 <dd>
