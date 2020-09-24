@@ -125,8 +125,8 @@
                 <!-- ▽▽▽ページコンテンツ▽▽▽ -->
                 <div class="contents">
                     <div class="contactBOX">
-                        <form action="/" name="search" method="get">
-                            <p class="errorBOX">正しく入力されていない項目があります。内容を確認のうえ、もう一度ご入力ください。</p>
+                        <form action="/confirm.php" name="search" method="post">
+                            <!-- <p class="errorBOX">正しく入力されていない項目があります。内容を確認のうえ、もう一度ご入力ください。</p> -->
                             <dl>
                                 <dt>ご希望の職種<span>必須</span></dt>
                                 <dd class="form-select">
@@ -255,14 +255,13 @@
                                 <input type="radio" name="radio1" value="0" onclick="" id="formAgree" />
                                 <label for="formAgree">&nbsp;同意する</label>
                             </div>
+                            <div class="inqBTN">
+                                <ul>
+                                    <li><button type="reset" class="inqBTN02" href="#">リセット</button></li>
+                                    <li><button type="submit" class="inqBTN01">確認画面へ</button></li>
+                                </ul>
+                            </div>
                         </form>
-
-                        <div class="inqBTN">
-                            <ul>
-                                <li><a href="#" class="inqBTN02">リセット</a></li>
-                                <li><a href="#" class="inqBTN01">確認画面へ</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <!-- △△△ページコンテンツ△△△ -->
