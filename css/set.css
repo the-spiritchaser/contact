@@ -1,0 +1,17 @@
+@charset "utf-8";
+/*デフォルト
+@import "base.css";
+@import "common.css";
+@import "style.css";*/
+
+/*PC*/
+@import url(base.css) screen and (min-width: 1025px);
+@import url(style.css) screen and (min-width: 1025px);
+
+/*タブレット*/
+@import url(base.css) screen and (min-width:768px) and (max-width:1024px);
+@import url(tablet.css) screen and (min-width:768px) and (max-width:1024px);
+
+/*スマホ*/
+@import url(base.css) screen and (max-width: 767px);
+@import url(smart.css) screen and (max-width: 767px);

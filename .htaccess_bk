@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /contact
+    RewriteRule ^(.*)$ /forms/contact/ [R=301]
+</IfModule>
+
