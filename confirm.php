@@ -1,7 +1,3 @@
-<?php
-  var_dump($_POST);
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,6 +33,11 @@
         <script src="js/common.js"></script>
         <script src="js/smoothscroll.js"></script>
     </head>
+
+    <?php
+      print_r($_POST);
+    ?>
+
     <body>
         <!-- Google Tag Manager (noscript) -->
         <noscript
@@ -156,26 +157,26 @@
                     <div class="contactBOX">
                         <p class="infoBOX">入力内容をご確認ください。以下の内容で送信します。</p>
 
-                        <form action="/" name="search" method="get">
+                        <form action="/thanks.php" name="search" method="post">
                             <dl>
                                 <dt>お問合せ内容<span>必須</span></dt>
                                 <dd>
                                     <p class="confirmation">WEBサイト構築</p>
                                 </dd>
                                 <dt>会社名<span>必須</span></dt>
-                                <dd><p class="confirmation">株式会社クラウドスミス</p></dd>
+                                <dd><p class="confirmation"><?php echo $_POST['name1']; ?></p></dd>
                                 <dt>URL</dt>
-                                <dd><p class="confirmation">cloud@〇〇〇.jp</p></dd>
+                                <dd><p class="confirmation"><?php echo $_POST['url']; ?></p></dd>
                                 <dt>お名前<span>必須</span></dt>
-                                <dd><p class="confirmation">蔵人　スミス</p></dd>
+                                <dd><p class="confirmation"><?php echo $_POST['name2']; ?></p></dd>
                                 <dt>お名前(フリガナ)<span>必須</span></dt>
-                                <dd><p class="confirmation">クラウド　スミス</p></dd>
+                                <dd><p class="confirmation"><?php echo $_POST['name3']; ?></p></dd>
                                 <dt>メールアドレス<span>必須</span></dt>
-                                <dd><p class="confirmation">kuraudo@〇〇〇.jp</p></dd>
+                                <dd><p class="confirmation"><?php echo $_POST['mail']; ?></p></dd>
                                 <dt>メールアドレス(確認)<span>必須</span></dt>
-                                <dd><p class="confirmation">kuraudo@〇〇〇.jp</p></dd>
+                                <dd><p class="confirmation"><?php echo $_POST['mail2']; ?></p></dd>
                                 <dt>電話番号<span>必須</span></dt>
-                                <dd><p class="confirmation">0000-456-7890</p></dd>
+                                <dd><p class="confirmation"><?php echo $_POST['tel']; ?></p></dd>
                                 <dt>弊社からのご連絡<span>必須</span></dt>
                                 <dd>
                                     <p class="confirmation">お電話でのご連絡</p>
@@ -187,7 +188,7 @@
                                 <dt>お問合せ内容</dt>
                                 <dd>
                                     <p class="confirmation">
-                                        お問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキストお問合せダミーテキスト
+                                        <?php echo $_POST['request']; ?>
                                     </p>
                                 </dd>
                             </dl>
