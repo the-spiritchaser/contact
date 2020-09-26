@@ -132,10 +132,17 @@
                                 <dd class="form-select">
                                     <select name="jobCategory" required="required">
                                         <option value="">選択してください</option>
-                                        <option value="1">マネージャー、フルスタックエンジニア</option>
-                                        <option value="2">オープン系システムエンジニア、プログラマー</option>
-                                        <option value="3">WEB系エンジニア、プログラマー</option>
-                                        <option value="4">フロントエンドエンジニア、デザイナー</option>
+                                        <?php 
+                                            $jobCategory = [
+                                                "マネージャー、フルスタックエンジニア",
+                                                "オープン系システムエンジニア、プログラマー",
+                                                "WEB系エンジニア、プログラマー",
+                                                "フロントエンドエンジニア、デザイナー"
+                                            ];
+                                            foreach($jobCategory as $jobCategory_value){
+                                                echo "<option value= ${jobCategory_value} >${jobCategory_value}</option>";
+                                            }
+                                        ?>
                                     </select>
                                 </dd>
 
@@ -184,7 +191,7 @@
                                 </dd>
                                 <dt>URL</dt>
                                 <dd>
-                                    <input type="url" name="url" id="url" class="inqTYPE01" maxlength="50" value="" placeholder="cloud@〇〇〇.jp" required />
+                                    <input type="url" name="url" id="url" class="inqTYPE01" maxlength="50" value="" placeholder="cloud@〇〇〇.jp" />
                                 </dd>
                                 <dt>お名前<span>必須</span></dt>
                                 <dd>

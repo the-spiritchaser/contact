@@ -159,6 +159,10 @@
 
                         <form action="/thanks.php" name="search" method="post">
                             <dl>
+                                <dt>ご希望の職種<span>必須</span></dt>
+                                <dd>
+                                    <p class="confirmation"><?php echo $_POST['jobCategory']; ?></p>
+                                </dd>
                                 <dt>お問合せ内容<span>必須</span></dt>
                                 <dd>
                                     <p class="confirmation">WEBサイト構築</p>
