@@ -2,6 +2,7 @@
     session_start();
     if(!$_POST){
         header('Location: ./index.php');
+        exit;
     }
     $_SESSION = $_POST;
 ?>
@@ -209,14 +210,13 @@
                                     </p>
                                 </dd>
                             </dl>
+                            <div class="inqBTN">
+                                <ul>
+                                    <li><a href="./index.php" class="inqBTN02">戻る</a></li>
+                                    <li><button type="submit" class="inqBTN01">送信する</button></li>
+                                </ul>
+                            </div>
                         </form>
-
-                        <div class="inqBTN">
-                            <ul>
-                                <li><a href="#" class="inqBTN02">戻る</a></li>
-                                <li><a href="#" class="inqBTN01">送信する</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <!-- △△△ページコンテンツ△△△ -->
