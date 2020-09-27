@@ -157,6 +157,11 @@
                     <div class="contactBOX">
                         <p class="infoBOX">入力内容をご確認ください。以下の内容で送信します。</p>
 
+                        <?php function h($str){
+                            return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
+                        }
+                        ?>
+
                         <form action="/thanks.php" name="search" method="post">
                             <dl>
                                 <dt>ご希望の職種<span>必須</span></dt>
@@ -168,19 +173,19 @@
                                     <p class="confirmation">WEBサイト構築</p>
                                 </dd>
                                 <dt>会社名<span>必須</span></dt>
-                                <dd><p class="confirmation"><?php echo $_POST['name1']; ?></p></dd>
+                                <dd><p class="confirmation"><?php echo h($_POST['name1']); ?></p></dd>
                                 <dt>URL</dt>
-                                <dd><p class="confirmation"><?php echo $_POST['url']; ?></p></dd>
+                                <dd><p class="confirmation"><?php echo h($_POST['url']); ?></p></dd>
                                 <dt>お名前<span>必須</span></dt>
-                                <dd><p class="confirmation"><?php echo $_POST['name2']; ?></p></dd>
+                                <dd><p class="confirmation"><?php echo h($_POST['name2']); ?></p></dd>
                                 <dt>お名前(フリガナ)<span>必須</span></dt>
-                                <dd><p class="confirmation"><?php echo $_POST['name3']; ?></p></dd>
+                                <dd><p class="confirmation"><?php echo h($_POST['name3']); ?></p></dd>
                                 <dt>メールアドレス<span>必須</span></dt>
-                                <dd><p class="confirmation"><?php echo $_POST['mail']; ?></p></dd>
+                                <dd><p class="confirmation"><?php echo h($_POST['mail']); ?></p></dd>
                                 <dt>メールアドレス(確認)<span>必須</span></dt>
-                                <dd><p class="confirmation"><?php echo $_POST['mail2']; ?></p></dd>
+                                <dd><p class="confirmation"><?php echo h($_POST['mail2']); ?></p></dd>
                                 <dt>電話番号<span>必須</span></dt>
-                                <dd><p class="confirmation"><?php echo $_POST['tel']; ?></p></dd>
+                                <dd><p class="confirmation"><?php echo h($_POST['tel']); ?></p></dd>
                                 <dt>弊社からのご連絡<span>必須</span></dt>
                                 <dd>
                                     <p class="confirmation">お電話でのご連絡</p>
@@ -192,7 +197,7 @@
                                 <dt>お問合せ内容</dt>
                                 <dd>
                                     <p class="confirmation">
-                                        <?php echo $_POST['request']; ?>
+                                        <?php echo h($_POST['request']); ?>
                                     </p>
                                 </dd>
                             </dl>
