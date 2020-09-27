@@ -148,27 +148,27 @@
 
                                 <dt>お問合せ内容<span>必須</span></dt>
                                 <dd id="form_select">
-                                    <input type="checkbox" name="CheckboxGroup2" value="チェックボックス" id="Group1_1" class="checkbox01" /><label
+                                    <input type="checkbox" name="CheckboxGroup2[]" value="システム開発" id="Group1_1" class="checkbox01" /><label
                                         for="Group1_1"
                                         class="check_label"
                                         >システム開発</label
                                     >
-                                    <input type="checkbox" name="CheckboxGroup2" value="チェックボックス" id="Group1_2" class="checkbox01" /><label
+                                    <input type="checkbox" name="CheckboxGroup2[]" value="WEBサイト構築" id="Group1_2" class="checkbox01" /><label
                                         for="Group1_2"
                                         class="check_label"
                                         >WEBサイト構築</label
                                     >
-                                    <input type="checkbox" name="CheckboxGroup2" value="チェックボックス" id="Group1_3" class="checkbox01" /><label
+                                    <input type="checkbox" name="CheckboxGroup2[]" value="RPAサービス" id="Group1_3" class="checkbox01" /><label
                                         for="Group1_3"
                                         class="check_label"
                                         >RPAサービス</label
                                     >
-                                    <input type="checkbox" name="CheckboxGroup2" value="チェックボックス" id="Group1_4" class="checkbox01" /><label
+                                    <input type="checkbox" name="CheckboxGroup2[]" value="サーバー構築" id="Group1_4" class="checkbox01" /><label
                                         for="Group1_4"
                                         class="check_label"
                                         >サーバー構築</label
                                     >
-                                    <input type="checkbox" name="CheckboxGroup2" value="チェックボックス" id="Group1_5" class="checkbox01" /><label
+                                    <input type="checkbox" name="CheckboxGroup2[]" value="その他" id="Group1_5" class="checkbox01" /><label
                                         for="Group1_5"
                                         class="check_label"
                                         >その他</label

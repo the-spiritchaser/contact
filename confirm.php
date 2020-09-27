@@ -170,7 +170,7 @@
                                 </dd>
                                 <dt>お問合せ内容<span>必須</span></dt>
                                 <dd>
-                                    <p class="confirmation">WEBサイト構築</p>
+                                    <p class="confirmation"><?php echo implode("、", $_POST['CheckboxGroup2']); ?></p>
                                 </dd>
                                 <dt>会社名<span>必須</span></dt>
                                 <dd><p class="confirmation"><?php echo h($_POST['name1']); ?></p></dd>
