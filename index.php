@@ -160,27 +160,42 @@
 
                                 <dt>お問合せ内容<span>必須</span></dt>
                                 <dd id="form_select">
-                                    <input type="checkbox" name="CheckboxGroup2[]" value="システム開発" id="Group1_1" class="checkbox01" /><label
+                                    <input type="checkbox" name="CheckboxGroup2[]" value="システム開発" id="Group1_1" class="checkbox01"
+                                        <?php if(in_array("システム開発", $_SESSION['CheckboxGroup2'])){echo "checked='checked'";} ?>
+                                    />
+                                    <label
                                         for="Group1_1"
                                         class="check_label"
                                         >システム開発</label
                                     >
-                                    <input type="checkbox" name="CheckboxGroup2[]" value="WEBサイト構築" id="Group1_2" class="checkbox01" /><label
+                                    <input type="checkbox" name="CheckboxGroup2[]" value="WEBサイト構築" id="Group1_2" class="checkbox01"
+                                        <?php if(in_array("WEBサイト構築", $_SESSION['CheckboxGroup2'])){echo "checked='checked'";} ?>
+                                    />
+                                    <label
                                         for="Group1_2"
                                         class="check_label"
                                         >WEBサイト構築</label
                                     >
-                                    <input type="checkbox" name="CheckboxGroup2[]" value="RPAサービス" id="Group1_3" class="checkbox01" /><label
+                                    <input type="checkbox" name="CheckboxGroup2[]" value="RPAサービス" id="Group1_3" class="checkbox01"
+                                        <?php if(in_array("RPAサービス", $_SESSION['CheckboxGroup2'])){echo "checked='checked'";} ?>
+                                    />
+                                    <label
                                         for="Group1_3"
                                         class="check_label"
                                         >RPAサービス</label
                                     >
-                                    <input type="checkbox" name="CheckboxGroup2[]" value="サーバー構築" id="Group1_4" class="checkbox01" /><label
+                                    <input type="checkbox" name="CheckboxGroup2[]" value="サーバー構築" id="Group1_4" class="checkbox01"
+                                        <?php if(in_array("サーバー構築", $_SESSION['CheckboxGroup2'])){echo "checked='checked'";} ?>
+                                    />
+                                    <label
                                         for="Group1_4"
                                         class="check_label"
                                         >サーバー構築</label
                                     >
-                                    <input type="checkbox" name="CheckboxGroup2[]" value="その他" id="Group1_5" class="checkbox01" /><label
+                                    <input type="checkbox" name="CheckboxGroup2[]" value="その他" id="Group1_5" class="checkbox01"
+                                        <?php if(in_array("その他", $_SESSION['CheckboxGroup2'])){echo "checked='checked'";} ?>
+                                    />
+                                    <label
                                         for="Group1_5"
                                         class="check_label"
                                         >その他</label
@@ -279,15 +294,45 @@
                                 </dd>
                                 <dt>弊社からのご連絡<span>必須</span></dt>
                                 <dd class="checkboxDD">
-                                    <label><input type="checkbox" name="renraku[]" value="お電話でのご連絡" />&nbsp;お電話でのご連絡</label><br />
-                                    <label><input type="checkbox" name="renraku[]" value="メールでのご連絡" />&nbsp;メールでのご連絡</label>
+                                    <label>
+                                        <input type="checkbox" name="renraku[]" value="お電話でのご連絡"
+                                            <?php if(in_array("お電話でのご連絡", $_SESSION['renraku'])){echo "checked='checked'";} ?>
+                                        />
+                                        &nbsp;お電話でのご連絡
+                                    </label><br />
+                                    <label>
+                                        <input type="checkbox" name="renraku[]" value="メールでのご連絡"
+                                            <?php if(in_array("メールでのご連絡", $_SESSION['renraku'])){echo "checked='checked'";} ?>
+                                        />
+                                        &nbsp;メールでのご連絡
+                                    </label>
                                 </dd>
                                 <dt>弊社を知ったきっかけ</dt>
                                 <dd class="checkboxDD">
-                                    <label><input type="checkbox" name="kikkake[]" value="WEB検索" />&nbsp;WEB検索</label><br />
-                                    <label><input type="checkbox" name="kikkake[]" value="ブログ記事" />&nbsp;ブログ記事</label><br />
-                                    <label><input type="checkbox" name="kikkake[]" value="ご紹介" />&nbsp;ご紹介</label><br />
-                                    <label><input type="checkbox" name="kikkake[]" value="その他" />&nbsp;その他</label>
+                                    <label>
+                                        <input type="checkbox" name="kikkake[]" value="WEB検索"
+                                            <?php if(in_array("WEB検索", $_SESSION['kikkake'])){echo "checked='checked'";} ?>
+                                        />
+                                        &nbsp;WEB検索
+                                    </label><br />
+                                    <label>
+                                        <input type="checkbox" name="kikkake[]" value="ブログ記事"
+                                            <?php if(in_array("ブログ記事", $_SESSION['kikkake'])){echo "checked='checked'";} ?>
+                                        />
+                                        &nbsp;ブログ記事
+                                    </label><br />
+                                    <label>
+                                        <input type="checkbox" name="kikkake[]" value="ご紹介" 
+                                            <?php if(in_array("ご紹介", $_SESSION['kikkake'])){echo "checked='checked'";} ?>
+                                        />
+                                        &nbsp;ご紹介
+                                    </label><br />
+                                    <label>
+                                        <input type="checkbox" name="kikkake[]" value="その他"
+                                            <?php if(in_array("その他", $_SESSION['kikkake'])){echo "checked='checked'";} ?>
+                                        />
+                                        &nbsp;その他
+                                    </label>
                                 </dd>
                                 <dt>お問合せ内容</dt>
                                 <dd>
