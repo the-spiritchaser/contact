@@ -1,6 +1,10 @@
 <?php
     session_start();
 ?>
+<?php function h($str){
+    return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
+}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -186,7 +190,7 @@
                                         id="name1"
                                         class="inqTYPE01"
                                         maxlength="50"
-                                        value=""
+                                        value="<?php if(isset($_SESSION['name1'])){echo h($_SESSION['name1']);} ?>"
                                         placeholder="株式会社クラウドスミス"
                                         required
                                     />
@@ -195,11 +199,28 @@
                                 </dd>
                                 <dt>URL</dt>
                                 <dd>
-                                    <input type="url" name="url" id="url" class="inqTYPE01" maxlength="50" value="" placeholder="cloud@〇〇〇.jp" />
+                                    <input
+                                        type="url"
+                                        name="url"
+                                        id="url"
+                                        class="inqTYPE01"
+                                        maxlength="50"
+                                        value="<?php if(isset($_SESSION['url'])){echo h($_SESSION['url']);} ?>"
+                                        placeholder="cloud@〇〇〇.jp"
+                                    />
                                 </dd>
                                 <dt>お名前<span>必須</span></dt>
                                 <dd>
-                                    <input type="text" name="name2" id="name2" class="inqTYPE01" maxlength="50" value="" placeholder="蔵人　スミス" required />
+                                    <input
+                                        type="text"
+                                        name="name2"
+                                        id="name2"
+                                        class="inqTYPE01"
+                                        maxlength="50"
+                                        value="<?php if(isset($_SESSION['name2'])){echo h($_SESSION['name2']);} ?>"
+                                        placeholder="蔵人　スミス"
+                                        required
+                                    />
                                 </dd>
                                 <dt>お名前(フリガナ)<span>必須</span></dt>
                                 <dd>
@@ -209,7 +230,7 @@
                                         id="name3"
                                         class="inqTYPE01"
                                         maxlength="50"
-                                        value=""
+                                        value="<?php if(isset($_SESSION['name3'])){echo h($_SESSION['name3']);} ?>"
                                         placeholder="クラウド　スミス"
                                         required
                                     />
@@ -222,7 +243,7 @@
                                         id="mail"
                                         class="inqTYPE01"
                                         maxlength="50"
-                                        value=""
+                                        value="<?php if(isset($_SESSION['mail'])){echo h($_SESSION['mail']);} ?>"
                                         placeholder="kuraudo@〇〇〇.jp"
                                         required
                                     />
@@ -235,13 +256,23 @@
                                         id="mail2"
                                         class="inqTYPE01"
                                         maxlength="50"
-                                        value=""
+                                        value="<?php if(isset($_SESSION['mail2'])){echo h($_SESSION['mail2']);} ?>"
                                         placeholder="kuraudo@〇〇〇.jp"
                                         required
                                     />
                                 </dd>
                                 <dt>電話番号<span>必須</span></dt>
-                                <dd><input type="tel" name="tel" id="tel" class="inqTYPE01" maxlength="50" value="" placeholder="0000-456-7890" required /></dd>
+                                <dd><input
+                                        type="tel"
+                                        name="tel"
+                                        id="tel"
+                                        class="inqTYPE01"
+                                        maxlength="50"
+                                        value="<?php if(isset($_SESSION['tel'])){echo h($_SESSION['tel']);} ?>"
+                                        placeholder="0000-456-7890"
+                                        required
+                                    />
+                                </dd>
                                 <dt>弊社からのご連絡<span>必須</span></dt>
                                 <dd class="checkboxDD">
                                     <label><input type="checkbox" name="renraku" value="1" />&nbsp;お電話でのご連絡</label><br />
@@ -255,16 +286,19 @@
                                     <label><input type="checkbox" name="kikkake" value="2" />&nbsp;その他</label>
                                 </dd>
                                 <dt>お問合せ内容</dt>
-                                <dd><textarea name="request" id="request" class="inqTYPE01 mgb05" cols="40" rows="4"></textarea></dd>
+                                <dd><textarea name="request" id="request" class="inqTYPE01 mgb05" cols="40" rows="4">
+                                        <?php if(isset($_SESSION['request'])){echo h($_SESSION['request']);} ?>
+                                    </textarea>
+                                </dd>
                             </dl>
                             <p class="mgb15px">
                                 当社の<a href="/privacy-policy.html" class="animsition-link">「プライバシーポリシー」</a
                                 >に同意の上ご利用ください。同意していただける場合は下の[同意する]をクリックしてください。
                             </p>
                             <div class="position_radio">
-                                <input type="radio" name="radio1" value="1" onclick="" id="formDisagree" checked />
+                                <input type="radio" name="radio1" value="1" onclick="" id="formDisagree" />
                                 <label for="formDisagree">&nbsp;同意しない</label>
-                                <input type="radio" name="radio1" value="0" onclick="" id="formAgree" />
+                                <input type="radio" name="radio1" value="0" onclick="" id="formAgree" <?php if($_SESSION['radio1'] === "0"){echo "checked" ;} ?> />
                                 <label for="formAgree">&nbsp;同意する</label>
                             </div>
                             <div class="inqBTN">
