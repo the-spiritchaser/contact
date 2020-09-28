@@ -148,7 +148,11 @@
                                                 "フロントエンドエンジニア、デザイナー"
                                             ];
                                             foreach($jobCategory as $jobCategory_value){
-                                                echo "<option value= ${jobCategory_value} >${jobCategory_value}</option>";
+                                                if($jobCategory_value === $_SESSION['jobCategory']){
+                                                    echo "<option value= ${jobCategory_value} selected >${jobCategory_value}</option>";
+                                                }else{
+                                                    echo "<option value= ${jobCategory_value} >${jobCategory_value}</option>";
+                                                }
                                             }
                                         ?>
                                     </select>
