@@ -275,21 +275,18 @@
                                 </dd>
                                 <dt>弊社からのご連絡<span>必須</span></dt>
                                 <dd class="checkboxDD">
-                                    <label><input type="checkbox" name="renraku" value="1" />&nbsp;お電話でのご連絡</label><br />
-                                    <label><input type="checkbox" name="renraku" value="2" />&nbsp;メールでのご連絡</label>
+                                    <label><input type="checkbox" name="renraku[]" value="お電話でのご連絡" />&nbsp;お電話でのご連絡</label><br />
+                                    <label><input type="checkbox" name="renraku[]" value="メールでのご連絡" />&nbsp;メールでのご連絡</label>
                                 </dd>
                                 <dt>弊社を知ったきっかけ</dt>
                                 <dd class="checkboxDD">
-                                    <label><input type="checkbox" name="kikkake" value="1" />&nbsp;WEB検索</label><br />
-                                    <label><input type="checkbox" name="kikkake" value="2" />&nbsp;ブログ記事</label><br />
-                                    <label><input type="checkbox" name="kikkake" value="2" />&nbsp;ご紹介</label><br />
-                                    <label><input type="checkbox" name="kikkake" value="2" />&nbsp;その他</label>
+                                    <label><input type="checkbox" name="kikkake[]" value="WEB検索" />&nbsp;WEB検索</label><br />
+                                    <label><input type="checkbox" name="kikkake[]" value="ブログ記事" />&nbsp;ブログ記事</label><br />
+                                    <label><input type="checkbox" name="kikkake[]" value="ご紹介" />&nbsp;ご紹介</label><br />
+                                    <label><input type="checkbox" name="kikkake[]" value="その他" />&nbsp;その他</label>
                                 </dd>
                                 <dt>お問合せ内容</dt>
-                                <dd><textarea name="request" id="request" class="inqTYPE01 mgb05" cols="40" rows="4">
-                                        <?php if(isset($_SESSION['request'])){echo h($_SESSION['request']);} ?>
-                                    </textarea>
-                                </dd>
+                                <dd><textarea name="request" id="request" class="inqTYPE01 mgb05" cols="40" rows="4"><?php if(isset($_SESSION['request'])){echo h($_SESSION['request']);} ?></textarea></dd>
                             </dl>
                             <p class="mgb15px">
                                 当社の<a href="/privacy-policy.html" class="animsition-link">「プライバシーポリシー」</a

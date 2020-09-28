@@ -6,6 +6,10 @@
     }
     $_SESSION = $_POST;
 ?>
+<?php function h($str){
+    return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
+}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -166,11 +170,6 @@
                     <div class="contactBOX">
                         <p class="infoBOX">入力内容をご確認ください。以下の内容で送信します。</p>
 
-                        <?php function h($str){
-                            return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
-                        }
-                        ?>
-
                         <form action="/thanks.php" name="search" method="post">
                             <dl>
                                 <dt>ご希望の職種<span>必須</span></dt>
@@ -179,7 +178,7 @@
                                 </dd>
                                 <dt>お問合せ内容<span>必須</span></dt>
                                 <dd>
-                                    <p class="confirmation"><?php echo implode("、", $_POST['CheckboxGroup2']); ?></p>
+                                    <p class="confirmation"><?php echo implode(", ", $_POST['CheckboxGroup2']); ?></p>
                                 </dd>
                                 <dt>会社名<span>必須</span></dt>
                                 <dd><p class="confirmation"><?php echo h($_POST['name1']); ?></p></dd>
@@ -197,11 +196,15 @@
                                 <dd><p class="confirmation"><?php echo h($_POST['tel']); ?></p></dd>
                                 <dt>弊社からのご連絡<span>必須</span></dt>
                                 <dd>
-                                    <p class="confirmation">お電話でのご連絡</p>
+                                    <p class="confirmation">
+                                        <?php echo implode(", ", $_POST['renraku']); ?>
+                                    </p>
                                 </dd>
                                 <dt>弊社を知ったきっかけ</dt>
                                 <dd>
-                                    <p class="confirmation">ブログ記事</p>
+                                    <p class="confirmation">
+                                        <?php echo implode(", ", $_POST['kikkake']); ?>
+                                    </p>
                                 </dd>
                                 <dt>お問合せ内容</dt>
                                 <dd>
