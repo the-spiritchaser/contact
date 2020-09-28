@@ -1,5 +1,16 @@
 <?php
     session_start();
+    $CheckboxGroup2 = $_SESSION['CheckboxGroup2'];
+    $name1 = $_SESSION['name1'];
+    $name2 = $_SESSION['name2'];
+    $name3 = $_SESSION['name3'];
+    $url = $_SESSION['url'];
+    $tel = $_SESSION['tel'];
+    $mail = $_SESSION['mail'];
+    $mail2 = $_SESSION['mail2'];
+    $kikkake = $_SESSION['kikkake'];
+    $renraku = $_SESSION['renraku'];
+    $request = $_SESSION['request'];
 ?>
 <?php function h($str){
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
@@ -161,7 +172,7 @@
                                 <dt>お問合せ内容<span>必須</span></dt>
                                 <dd id="form_select">
                                     <input type="checkbox" name="CheckboxGroup2[]" value="システム開発" id="Group1_1" class="checkbox01"
-                                        <?php if(in_array("システム開発", $_SESSION['CheckboxGroup2'])){echo "checked='checked'";} ?>
+                                        <?php if(in_array("システム開発", $CheckboxGroup2)){echo "checked='checked'";} ?>
                                     />
                                     <label
                                         for="Group1_1"
@@ -169,7 +180,7 @@
                                         >システム開発</label
                                     >
                                     <input type="checkbox" name="CheckboxGroup2[]" value="WEBサイト構築" id="Group1_2" class="checkbox01"
-                                        <?php if(in_array("WEBサイト構築", $_SESSION['CheckboxGroup2'])){echo "checked='checked'";} ?>
+                                        <?php if(in_array("WEBサイト構築", $CheckboxGroup2)){echo "checked='checked'";} ?>
                                     />
                                     <label
                                         for="Group1_2"
@@ -177,7 +188,7 @@
                                         >WEBサイト構築</label
                                     >
                                     <input type="checkbox" name="CheckboxGroup2[]" value="RPAサービス" id="Group1_3" class="checkbox01"
-                                        <?php if(in_array("RPAサービス", $_SESSION['CheckboxGroup2'])){echo "checked='checked'";} ?>
+                                        <?php if(in_array("RPAサービス", $CheckboxGroup2)){echo "checked='checked'";} ?>
                                     />
                                     <label
                                         for="Group1_3"
@@ -185,7 +196,7 @@
                                         >RPAサービス</label
                                     >
                                     <input type="checkbox" name="CheckboxGroup2[]" value="サーバー構築" id="Group1_4" class="checkbox01"
-                                        <?php if(in_array("サーバー構築", $_SESSION['CheckboxGroup2'])){echo "checked='checked'";} ?>
+                                        <?php if(in_array("サーバー構築", $CheckboxGroup2)){echo "checked='checked'";} ?>
                                     />
                                     <label
                                         for="Group1_4"
@@ -193,7 +204,7 @@
                                         >サーバー構築</label
                                     >
                                     <input type="checkbox" name="CheckboxGroup2[]" value="その他" id="Group1_5" class="checkbox01"
-                                        <?php if(in_array("その他", $_SESSION['CheckboxGroup2'])){echo "checked='checked'";} ?>
+                                        <?php if(in_array("その他", $CheckboxGroup2)){echo "checked='checked'";} ?>
                                     />
                                     <label
                                         for="Group1_5"
@@ -209,7 +220,7 @@
                                         id="name1"
                                         class="inqTYPE01"
                                         maxlength="50"
-                                        value="<?php if(isset($_SESSION['name1'])){echo h($_SESSION['name1']);} ?>"
+                                        value="<?php if(isset($name1)){echo h($name1);} ?>"
                                         placeholder="株式会社クラウドスミス"
                                         required
                                     />
@@ -224,7 +235,7 @@
                                         id="url"
                                         class="inqTYPE01"
                                         maxlength="50"
-                                        value="<?php if(isset($_SESSION['url'])){echo h($_SESSION['url']);} ?>"
+                                        value="<?php if(isset($url)){echo h($url);} ?>"
                                         placeholder="cloud@〇〇〇.jp"
                                     />
                                 </dd>
@@ -236,7 +247,7 @@
                                         id="name2"
                                         class="inqTYPE01"
                                         maxlength="50"
-                                        value="<?php if(isset($_SESSION['name2'])){echo h($_SESSION['name2']);} ?>"
+                                        value="<?php if(isset($name2)){echo h($name2);} ?>"
                                         placeholder="蔵人　スミス"
                                         required
                                     />
@@ -249,7 +260,7 @@
                                         id="name3"
                                         class="inqTYPE01"
                                         maxlength="50"
-                                        value="<?php if(isset($_SESSION['name3'])){echo h($_SESSION['name3']);} ?>"
+                                        value="<?php if(isset($name3)){echo h($name3);} ?>"
                                         placeholder="クラウド　スミス"
                                         required
                                     />
@@ -262,7 +273,7 @@
                                         id="mail"
                                         class="inqTYPE01"
                                         maxlength="50"
-                                        value="<?php if(isset($_SESSION['mail'])){echo h($_SESSION['mail']);} ?>"
+                                        value="<?php if(isset($mail)){echo h($mail);} ?>"
                                         placeholder="kuraudo@〇〇〇.jp"
                                         required
                                     />
@@ -275,7 +286,7 @@
                                         id="mail2"
                                         class="inqTYPE01"
                                         maxlength="50"
-                                        value="<?php if(isset($_SESSION['mail2'])){echo h($_SESSION['mail2']);} ?>"
+                                        value="<?php if(isset($mail2)){echo h($mail2);} ?>"
                                         placeholder="kuraudo@〇〇〇.jp"
                                         required
                                     />
@@ -287,7 +298,7 @@
                                         id="tel"
                                         class="inqTYPE01"
                                         maxlength="50"
-                                        value="<?php if(isset($_SESSION['tel'])){echo h($_SESSION['tel']);} ?>"
+                                        value="<?php if(isset($tel)){echo h($tel);} ?>"
                                         placeholder="0000-456-7890"
                                         required
                                     />
@@ -296,13 +307,13 @@
                                 <dd class="checkboxDD">
                                     <label>
                                         <input type="checkbox" name="renraku[]" value="お電話でのご連絡"
-                                            <?php if(in_array("お電話でのご連絡", $_SESSION['renraku'])){echo "checked='checked'";} ?>
+                                            <?php if(in_array("お電話でのご連絡", $renraku)){echo "checked='checked'";} ?>
                                         />
                                         &nbsp;お電話でのご連絡
                                     </label><br />
                                     <label>
                                         <input type="checkbox" name="renraku[]" value="メールでのご連絡"
-                                            <?php if(in_array("メールでのご連絡", $_SESSION['renraku'])){echo "checked='checked'";} ?>
+                                            <?php if(in_array("メールでのご連絡", $renraku)){echo "checked='checked'";} ?>
                                         />
                                         &nbsp;メールでのご連絡
                                     </label>
@@ -311,32 +322,32 @@
                                 <dd class="checkboxDD">
                                     <label>
                                         <input type="checkbox" name="kikkake[]" value="WEB検索"
-                                            <?php if(in_array("WEB検索", $_SESSION['kikkake'])){echo "checked='checked'";} ?>
+                                            <?php if(in_array("WEB検索", $kikkake)){echo "checked='checked'";} ?>
                                         />
                                         &nbsp;WEB検索
                                     </label><br />
                                     <label>
                                         <input type="checkbox" name="kikkake[]" value="ブログ記事"
-                                            <?php if(in_array("ブログ記事", $_SESSION['kikkake'])){echo "checked='checked'";} ?>
+                                            <?php if(in_array("ブログ記事", $kikkake)){echo "checked='checked'";} ?>
                                         />
                                         &nbsp;ブログ記事
                                     </label><br />
                                     <label>
                                         <input type="checkbox" name="kikkake[]" value="ご紹介" 
-                                            <?php if(in_array("ご紹介", $_SESSION['kikkake'])){echo "checked='checked'";} ?>
+                                            <?php if(in_array("ご紹介", $kikkake)){echo "checked='checked'";} ?>
                                         />
                                         &nbsp;ご紹介
                                     </label><br />
                                     <label>
                                         <input type="checkbox" name="kikkake[]" value="その他"
-                                            <?php if(in_array("その他", $_SESSION['kikkake'])){echo "checked='checked'";} ?>
+                                            <?php if(in_array("その他", $kikkake)){echo "checked='checked'";} ?>
                                         />
                                         &nbsp;その他
                                     </label>
                                 </dd>
                                 <dt>お問合せ内容</dt>
                                 <dd>
-                                    <textarea name="request" id="request" class="inqTYPE01 mgb05" cols="40" rows="4"><?php if(isset($_SESSION['request'])){echo h($_SESSION['request']);} ?></textarea>
+                                    <textarea name="request" id="request" class="inqTYPE01 mgb05" cols="40" rows="4"><?php if(isset($request)){echo h($request);} ?></textarea>
                                 </dd>
                             </dl>
                             <p class="mgb15px">
