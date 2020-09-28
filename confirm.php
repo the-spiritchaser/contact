@@ -209,7 +209,7 @@
                                 <dt>お問合せ内容</dt>
                                 <dd>
                                     <p class="confirmation">
-                                        <?php echo h($_POST['request']); ?>
+                                        <?php echo nl2br(h($_POST['request'])); ?>
                                     </p>
                                 </dd>
                             </dl>

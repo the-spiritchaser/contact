@@ -290,7 +290,9 @@
                                     <label><input type="checkbox" name="kikkake[]" value="その他" />&nbsp;その他</label>
                                 </dd>
                                 <dt>お問合せ内容</dt>
-                                <dd><textarea name="request" id="request" class="inqTYPE01 mgb05" cols="40" rows="4"><?php if(isset($_SESSION['request'])){echo h($_SESSION['request']);} ?></textarea></dd>
+                                <dd>
+                                    <textarea name="request" id="request" class="inqTYPE01 mgb05" cols="40" rows="4"><?php if(isset($_SESSION['request'])){echo h($_SESSION['request']);} ?></textarea>
+                                </dd>
                             </dl>
                             <p class="mgb15px">
                                 当社の<a href="/privacy-policy.html" class="animsition-link">「プライバシーポリシー」</a
