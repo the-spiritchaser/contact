@@ -6,7 +6,18 @@
         exit;
     }
 
+    // バリデーション、if文で分岐
+    include("validator.php");
+    $fv = new FormValidator();
+    $fv->requiredCheck($_POST['name1'], "会社名");
+
     $_SESSION = $_POST;
+    $_SESSION['error'] = $fv->errorMsg;
+    if(isset($_SESSION['error'])){
+        header('Location: ./index.php');
+        exit;
+    }
+    // セッションに$errorMsgを格納
 
     function h($str){
         if(is_array($str)){
@@ -20,7 +31,6 @@
     $renraku = implode(", ", $_POST['renraku']);
     $kikkake = implode(", ", $_POST['kikkake']);
 
-    // バリデーション
 ?>
 
 <!DOCTYPE html>
