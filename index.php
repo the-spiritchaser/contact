@@ -1,5 +1,14 @@
 <?php
     session_start();
+
+    function h($str){
+        if(is_array($str)){
+            return array_map("h", $str);
+        }else{
+            return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
+        }
+    }
+
     $CheckboxGroup2 = $_SESSION['CheckboxGroup2'];
     $name1 = $_SESSION['name1'];
     $name2 = $_SESSION['name2'];
@@ -11,10 +20,6 @@
     $kikkake = $_SESSION['kikkake'];
     $renraku = $_SESSION['renraku'];
     $request = $_SESSION['request'];
-?>
-<?php function h($str){
-    return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
-}
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +57,9 @@
         <script src="js/common.js"></script>
         <script src="js/smoothscroll.js"></script>
     </head>
-
+<?php
+    print_r($_SESSION);
+?>
     <body>
         <div class="animsition">
             <!--▼▼▼SPヘッダ▼▼▼-->

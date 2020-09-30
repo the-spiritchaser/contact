@@ -1,14 +1,26 @@
 <?php
     session_start();
+
     if(!$_POST){
         header('Location: ./index.php');
         exit;
     }
+
     $_SESSION = $_POST;
-?>
-<?php function h($str){
-    return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
-}
+
+    function h($str){
+        if(is_array($str)){
+            return array_map("h", $str);
+        }else{
+            return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
+        }
+    }
+
+    $CheckboxGroup2 = implode(", ", $_POST['CheckboxGroup2']);
+    $renraku = implode(", ", $_POST['renraku']);
+    $kikkake = implode(", ", $_POST['kikkake']);
+
+    // バリデーション
 ?>
 
 <!DOCTYPE html>
@@ -174,11 +186,11 @@
                             <dl>
                                 <dt>ご希望の職種<span>必須</span></dt>
                                 <dd>
-                                    <p class="confirmation"><?php echo $_POST['jobCategory']; ?></p>
+                                    <p class="confirmation"><?php echo h($_POST['jobCategory']); ?></p>
                                 </dd>
                                 <dt>お問合せ内容<span>必須</span></dt>
                                 <dd>
-                                    <p class="confirmation"><?php echo implode(", ", $_POST['CheckboxGroup2']); ?></p>
+                                    <p class="confirmation"><?php echo h($CheckboxGroup2); ?></p>
                                 </dd>
                                 <dt>会社名<span>必須</span></dt>
                                 <dd><p class="confirmation"><?php echo h($_POST['name1']); ?></p></dd>
@@ -195,17 +207,9 @@
                                 <dt>電話番号<span>必須</span></dt>
                                 <dd><p class="confirmation"><?php echo h($_POST['tel']); ?></p></dd>
                                 <dt>弊社からのご連絡<span>必須</span></dt>
-                                <dd>
-                                    <p class="confirmation">
-                                        <?php echo implode(", ", $_POST['renraku']); ?>
-                                    </p>
-                                </dd>
+                                <dd><p class="confirmation"><?php echo h($renraku); ?></p></dd>
                                 <dt>弊社を知ったきっかけ</dt>
-                                <dd>
-                                    <p class="confirmation">
-                                        <?php echo implode(", ", $_POST['kikkake']); ?>
-                                    </p>
-                                </dd>
+                                <dd><p class="confirmation"><?php echo h($kikkake); ?></p></dd>
                                 <dt>お問合せ内容</dt>
                                 <dd>
                                     <p class="confirmation">
