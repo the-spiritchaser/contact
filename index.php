@@ -1,6 +1,6 @@
 <?php
-    session_start();
 
+    // エスケープ処理
     function h($str){
         if(is_array($str)){
             return array_map("h", $str);
@@ -9,17 +9,17 @@
         }
     }
 
-    $CheckboxGroup2 = $_SESSION['CheckboxGroup2'];
-    $name1 = $_SESSION['name1'];
-    $name2 = $_SESSION['name2'];
-    $name3 = $_SESSION['name3'];
-    $url = $_SESSION['url'];
-    $tel = $_SESSION['tel'];
-    $mail = $_SESSION['mail'];
-    $mail2 = $_SESSION['mail2'];
-    $kikkake = $_SESSION['kikkake'];
-    $renraku = $_SESSION['renraku'];
-    $request = $_SESSION['request'];
+    if(isset($_POST['url'])){$url = $_POST['url'];}
+    if(isset($_POST['tel'])){$tel = $_POST['tel'];}
+    if(isset($_POST['mail'])){$mail = $_POST['mail'];}
+    if(isset($_POST['mail2'])){$mail2 = $_POST['mail2'];}
+    if(isset($_POST['name1'])){$name1 = $_POST['name1'];}
+    if(isset($_POST['name2'])){$name2 = $_POST['name2'];}
+    if(isset($_POST['name3'])){$name3 = $_POST['name3'];}
+    if(isset($_POST['kikkake'])){$kikkake = $_POST['kikkake'];}
+    if(isset($_POST['renraku'])){$renraku = $_POST['renraku'];}
+    if(isset($_POST['request'])){$request = $_POST['request'];}
+    if(isset($_POST['CheckboxGroup2'])){$CheckboxGroup2 = $_POST['CheckboxGroup2'];}
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +58,7 @@
         <script src="js/smoothscroll.js"></script>
     </head>
 <?php
-    print_r($_SESSION);
+    print_r($_POST);
 ?>
     <body>
         <div class="animsition">
@@ -166,7 +166,7 @@
                                                 "フロントエンドエンジニア、デザイナー"
                                             ];
                                             foreach($jobCategory as $jobCategory_value){
-                                                if($jobCategory_value === $_SESSION['jobCategory']){
+                                                if($jobCategory_value === $_POST['jobCategory']){
                                                     echo "<option value= ${jobCategory_value} selected >${jobCategory_value}</option>";
                                                 }else{
                                                     echo "<option value= ${jobCategory_value} >${jobCategory_value}</option>";
@@ -179,7 +179,7 @@
                                 <dt>お問合せ内容<span>必須</span></dt>
                                 <dd id="form_select">
                                     <input type="checkbox" name="CheckboxGroup2[]" value="システム開発" id="Group1_1" class="checkbox01"
-                                        <?php if(in_array("システム開発", $CheckboxGroup2)){echo "checked='checked'";} ?>
+                                        <?php if(isset($CheckboxGroup2) && in_array("システム開発", $CheckboxGroup2)){echo "checked='checked'";} ?>
                                     />
                                     <label
                                         for="Group1_1"
@@ -225,13 +225,17 @@
                                         type="text"
                                         name="name1"
                                         id="name1"
-                                        class="inqTYPE01"
+                                        class="inqTYPE01 <?php if(isset($_POST['error'])){echo "error";} ?>"
                                         maxlength="50"
                                         value="<?php if(isset($name1)){echo h($name1);} ?>"
                                         placeholder="株式会社クラウドスミス"
                                         required
                                     />
-                                    <!-- <p class="errorTXT">会社名を入力してください</p> -->
+                                    <?php
+                                        if(isset($_POST['error'])){
+                                            echo "<p class='errorTXT'>会社名を入力してください</p>";
+                                        }
+                                    ?>
                                     <!-- <input class="inqTYPE01 error"> -->
                                 </dd>
                                 <dt>URL</dt>
@@ -364,7 +368,7 @@
                             <div class="position_radio">
                                 <input type="radio" name="radio1" value="1" onclick="" id="formDisagree" />
                                 <label for="formDisagree">&nbsp;同意しない</label>
-                                <input type="radio" name="radio1" value="0" onclick="" id="formAgree" <?php if($_SESSION['radio1'] === "0"){echo "checked" ;} ?> />
+                                <input type="radio" name="radio1" value="0" onclick="" id="formAgree" <?php if($_POST['radio1'] === "0"){echo "checked" ;} ?> />
                                 <label for="formAgree">&nbsp;同意する</label>
                             </div>
                             <div class="inqBTN">
