@@ -1,24 +1,22 @@
 <?php
-    session_start();
-
     if(!$_POST){
         header('Location: ./index.php');
         exit;
     }
 
-    // バリデーション、if文で分岐
+    // バリデーション
     include("validator.php");
     $fv = new FormValidator();
     $fv->requiredCheck($_POST['name1'], "会社名");
 
-    $_SESSION = $_POST;
-    $_SESSION['error'] = $fv->errorMsg;
-    if(isset($_SESSION['error'])){
+    // エラーがあればフォームにリダイレクト
+    $_POST['error'] = $fv->errorMsg;
+    if(isset($_POST['error'])){
         header('Location: ./index.php');
         exit;
     }
-    // セッションに$errorMsgを格納
 
+    // エスケープ処理
     function h($str){
         if(is_array($str)){
             return array_map("h", $str);
@@ -227,9 +225,12 @@
                                     </p>
                                 </dd>
                             </dl>
+
+                            <input type="hidden" name="name1" value="<?=h($_POST['name1'])?>">
+
                             <div class="inqBTN">
                                 <ul>
-                                    <li><a href="./index.php" class="inqBTN02">戻る</a></li>
+                                    <li><button type="submit" class="inqBTN02" formaction="/index.php">戻る</button></li>
                                     <li><button type="submit" class="inqBTN01">送信する</button></li>
                                 </ul>
                             </div>
